@@ -13,6 +13,16 @@ for (let i = 0; i < 5; i++) {
 // callback function has reference to every value of 'i' because of let keyword and it's block scope
 // NOTE - let is declared inside for loop, hence every setTimeout callback will have it's own reference to value i
 
+// const with setTimeout
+for (const i=0; i < 10; i++) {
+  setTimeout(()=>{
+    console.log(i);
+  }, 100);
+}
+
+// Output: 0, error
+// Loops get's exicuted only once then in the next iteration it throws error because of reassignment to 'const' counter variable
+
 // using global let with for loop
 function delayLog() {
   let i; // declaring variable outside of for loop -> global for the loop
