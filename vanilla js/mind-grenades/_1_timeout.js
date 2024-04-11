@@ -1,11 +1,13 @@
-// var with setTimeout
+//* var with setTimeout
 for (var i = 0; i < 5; i++) {
   setTimeout(() => console.log(i), 1000 * i);
 }
 // Output - 5 5 5 5 5
-// beacuse of global scope of var, 5 gets printed every second from 0 to 4
+// because of global scope of var, 5 gets printed every second from 0 to 4
+console.log(i); // var 'i' is accessible outside of loop as well
 
-// let with setTimeout
+
+//* let with setTimeout
 for (let i = 0; i < 5; i++) {
   setTimeout(() => console.log(i), 1000 * i);
 }
@@ -13,17 +15,18 @@ for (let i = 0; i < 5; i++) {
 // callback function has reference to every value of 'i' because of let keyword and it's block scope
 // NOTE - let is declared inside for loop, hence every setTimeout callback will have it's own reference to value i
 
-// const with setTimeout
-for (const i=0; i < 10; i++) {
-  setTimeout(()=>{
-    console.log(i);
-  }, 100);
-}
+//* const with setTimeout
+// for (const i = 0; i < 10; i++) {
+//   setTimeout(() => {
+//     console.log(i);
+//   }, 100);
+// }
 
 // Output: 0, error
-// Loops get's exicuted only once then in the next iteration it throws error because of reassignment to 'const' counter variable
+// Loops get's executed only once then in the next iteration it throws error because of reassignment to 'const' counter variable
 
-// using global let with for loop
+
+//* using global let with for loop
 function delayLog() {
   let i; // declaring variable outside of for loop -> global for the loop
   for (i = 0; i < 5; i++) {
@@ -34,21 +37,21 @@ function delayLog() {
 }
 
 delayLog();
-// Ouput -
+// Output -
 // 5 5 5 5 5
 
-// NOTE - setTimeout with 0 milliSecond or empty argument executes in order
-// setTimeout(() => {
-//   console.log("0 setTimeout");
-// }, 0);
+//* NOTE - setTimeout with 0 milliSecond or empty argument executes in order
+setTimeout(() => {
+  console.log("0 setTimeout");
+}, 0);
 
-// setTimeout(() => {
-//   console.log("Empty setTimeout");
-// });
+setTimeout(() => {
+  console.log("Empty setTimeout");
+});
 
-// for (let k = 0; k < 2; k++) {
-//   console.log(k);
-// }
+for (let k = 0; k < 2; k++) {
+  console.log(k);
+}
 
 /**
  * console.log(k); // referenceError -> let has block scope
@@ -64,7 +67,7 @@ delayLog();
 
 setTimeout(() => {
   console.log('0 setTimeout');
-  alert('0 setTimeout');
+//   alert('0 setTimeout');
 }, 0);
 
 setTimeout(() => {
@@ -72,7 +75,8 @@ setTimeout(() => {
   alert('Empty setTimeout');
 });
 
-for (let k = 0; k < 100000; k++) {
+let limit = 100000;
+for (let k = 0; k < limit; k++) {
   console.log(k);
 }
 
