@@ -27,7 +27,21 @@ if (x == 1 && x == 2 && x == 3) {
 // Concept -
 /**
  * when used == for comparison,
- * non premitive converted to premitive
+ * non primitive converted to primitive
  * object uses toString() method for conversion
  *
  */
+
+
+/**
+ * Question: Guess the output of below code snippet
+ * 
+ */
+
+let obj = {
+  '1': 'a',
+  1: 'b',
+  [1]: 'c'
+}
+
+console.log(obj[1]) // Output: c
