@@ -45,3 +45,10 @@ let obj = {
 }
 
 console.log(obj[1]) // Output: c
+
+
+/** Object Destructuring */
+let { p, p: y } = {p : 12};
+
+console.log('p =', p); // p = 12
+console.log('y =', y); // y = 2
