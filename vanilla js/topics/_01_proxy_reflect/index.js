@@ -27,7 +27,7 @@ console.log(proxy1.message1);
 
 // Object defines some internal methods specifying how it can be interacted with
 // All internal methods are called by the language itself, and are not directly accessible in JavaScript code.
-// Internal methods of Objects and corrensponding proxy traps -
+// Internal methods of Objects and corresponding proxy traps -
 // [[GetPrototypeOf]] - getPrototypeOf()
 // [[SetPrototypeOf]] - setPrototypeOf()
 // [[IsExtensible]] - isExtensible()
