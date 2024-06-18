@@ -44,3 +44,15 @@ fs[0](); // 0
 fs[1](); // 1
 fs[2](); // 2
 // Explanation -> let keyword has block scope
+
+
+//* build counter function
+const func = function() {
+  let count = 0;
+  // console.log(count++);
+  return ()=> console.log(count++);
+}
+
+const counter = func();
+counter() // 0
+counter() // 1
