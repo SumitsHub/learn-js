@@ -1,5 +1,3 @@
-// TODO: add new property in class method
-
 class Person {
   // class variables - it's same as instance variable, it's not a static variable
   noOfWins = 0;

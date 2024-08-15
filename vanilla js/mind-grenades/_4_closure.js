@@ -56,3 +56,25 @@ const func = function() {
 const counter = func();
 counter() // 0
 counter() // 1
+
+
+// creating counter - no specific reason for 'var'
+var ctr;
+ctr = (function () {
+    var pc = 0;
+    function change(v) {
+        pc += v;
+    }
+
+    return {
+        inc: (val = 1) => change(val),
+        dec: (val = 1) => change(val),
+        value: () => pc
+    }
+})();
+console.log(ctr.value()); // 0
+ctr.inc()
+ctr.inc()
+console.log(ctr.value()); // 2
+ctr.dec();
+console.log(ctr.value()); // 3
