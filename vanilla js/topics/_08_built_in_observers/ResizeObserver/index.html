@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize Observer</title>
+    <style>
+        .container {
+            width: 90%;
+            height: 400px;
+            border: 1px solid #dfdf00;
+
+
+            text-align: center;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid blueviolet;
+            margin: 0 auto;
+
+            /* IMP */
+            resize: both;
+            overflow: auto;
+        }
+
+        #slider {
+            width: 90%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            Box
+        </div>
+        <input type="range" name="slider" id="slider" min="300" max="1000" step="10">
+
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
