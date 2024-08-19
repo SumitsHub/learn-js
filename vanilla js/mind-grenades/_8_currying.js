@@ -1,3 +1,8 @@
+// function currying
+// Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions each with only a single argument.
+
+// Curried functions are constructed by chaining closures and by defining and immediately returning their inner functions simultaneously.
+
 function add(...args) {
   let sum = args.reduce((acc, val) => acc + val, 0);
 

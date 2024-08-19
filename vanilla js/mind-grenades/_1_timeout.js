@@ -89,3 +89,27 @@ for (let k = 0; k < limit; k++) {
  * 0 setTimeout
  * Empty setTimeout
  */
+
+
+//* Hoisting with setTimeout
+setTimeout(() => {
+  console.log(`Timeout c - ${c}`);
+}, 1000);
+
+let c = 20;
+
+setTimeout(() => {
+  console.log(`Timeout x - ${x}`);
+  func();
+});
+function func() {
+  console.log(x); // undefined
+}
+func();
+var x = 30;
+
+// Output:
+// undefined
+// Timeout x - 30
+// 30
+// Timeout c - 20
