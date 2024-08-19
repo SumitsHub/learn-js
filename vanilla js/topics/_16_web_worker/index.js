@@ -46,3 +46,17 @@ function WorkerExample2() {
 
 WorkerExample2();
 console.log("After starting worker-02");
+
+
+function WorkerExample3() {
+  //* example to check 'window' and 'self' object in worker thread
+  if (window.Worker) {
+    let w = new Worker("worker-03.js");
+
+    setTimeout(() => {
+      w.terminate();
+    }, 2000);
+  }
+}
+
+WorkerExample3();
