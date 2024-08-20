@@ -50,3 +50,23 @@ console.log(classifyCharacter("A")); // Output: 'uppercase'
 console.log(classifyCharacter("b")); // Output: 'lowercase'
 console.log(classifyCharacter("5")); // Output: 'digit'
 console.log(classifyCharacter("$")); // Output: 'neither uppercase, lowercase, nor digit'
+
+
+//* number and Number
+let a = 5;
+let b = new Number(5);
+let c = 5;
+
+console.log(a == b); // true
+console.log(a === b); // false
+console.log(b === c); // false
+
+console.log(typeof a); // number
+console.log(typeof b); // object
+
+// Without 'new' keyword
+console.log(Number(1) === 1); // true
+
+console.log(typeof Boolean(0)); // boolean
+console.log(typeof new Boolean("Some")); // object
+
