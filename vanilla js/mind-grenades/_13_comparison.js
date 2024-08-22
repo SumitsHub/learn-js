@@ -70,3 +70,8 @@ console.log(Number(1) === 1); // true
 console.log(typeof Boolean(0)); // boolean
 console.log(typeof new Boolean("Some")); // object
 
+console.log(NaN === NaN); // false
+console.log(typeof NaN); // number
+// use Number.isNaN() to check for NaN
+console.log(Number.isNaN(NaN)); // true
+
