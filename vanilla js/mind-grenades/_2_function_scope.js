@@ -17,5 +17,16 @@ function test() {
   const PI = 3.1;
 }
 
-test();
+// test();
 // OUTPUT: Uncaught ReferenceError: Cannot access 'PI' before initialization
+
+//*  #03 - declaring variable with var and let in same scope
+
+const func = ()=> {
+  var a = 10;
+  let a = 50;
+  console.log(a); 
+}
+
+// func(); 
+// SyntaxError: Identifier 'a' has already been declared

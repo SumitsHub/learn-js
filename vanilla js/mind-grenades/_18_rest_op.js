@@ -14,3 +14,11 @@ function myFunc(...args) {
 myFunc("hey", [232323, 2434, 2423], "2423 {}");
 
 console.log(typeof myFunc); // function
+
+
+//* rest operator with empty arg
+function func(...args) {
+  console.log(args);
+}
+
+func(); // []
