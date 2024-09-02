@@ -31,7 +31,7 @@ function Animal() {
 const animal = new Animal();
 console.log(animal); // { name: 'Lion' }
 
-// Concept - if constructor function returns an object explicitly then that object will be returned when invoked using new keyword
+//* Concept - if constructor function returns an 'object' explicitly then that object will be returned when invoked using new keyword
 
 // #03 - Guess the output
 function Animal2() {
@@ -43,4 +43,4 @@ function Animal2() {
 const animal2 = new Animal2();
 console.log(animal2); // { name: 'Dog' }
 
-// Concept - is constructor function returning anything else than object then 'this' object is returned by the function when invoked with new keyword
+//* Concept - if constructor function returning anything else than object then 'this' object is returned by the function when invoked with new keyword

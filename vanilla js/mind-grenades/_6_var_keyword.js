@@ -19,8 +19,6 @@ for (k = 0; k < 2; k++) {
 }
 
 console.log(k); // 2
-// here i
-
 
 // variables and functions - this is simple, we can use function before declaration 
 var totalCount = 5;

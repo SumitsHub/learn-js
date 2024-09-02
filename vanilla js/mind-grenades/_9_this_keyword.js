@@ -80,7 +80,7 @@ const person2 = {
   },
 };
 
-person2.sayHello(); // Hello, ! -> arrow function don't have this keyword
+person2.sayHello(); // Hello, ! -> arrow function don't have this keyword - empty string because of window object's name property, else undefined
 
 setTimeout(person2.sayHello, 100); // Hello, ! -> this.name = "", this == window object
 

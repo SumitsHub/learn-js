@@ -47,7 +47,8 @@ let obj = {
 console.log(obj[1]) // Output: c
 
 
-/** Object Destructuring */
+//** Object Destructuring */
+// we can define multiple aliases while destructuring
 let { p, p: y } = {p : 12};
 
 console.log('p =', p); // p = 12
