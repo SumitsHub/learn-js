@@ -1,5 +1,10 @@
 # Web workers
 
+## Types of Workers
+1. Dedicated Workers
+2. Shared Workers
+3. Service Workers
+
 ## Limitations of web worker
 - Web worker cannot manipulate DOM directly
 - No 'window' object (instead 'self' object is there with similar properties of 'window' object)
