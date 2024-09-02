@@ -53,3 +53,18 @@ console.log(id.next(10)); // {value: 16, done: true} - yield returns this value 
 
 // Generators have return method - returns the given value and finishes the generator itself
 console.log(id.return(10)); // {value: 10, done: true}
+
+function* generatorWithReturn() {
+  yield 1;
+  yield 11;
+  yield 111;
+
+  return 2; // end iterator using return
+  // yield 3;
+}
+let g = generatorWithReturn();
+console.log(g.next()); // { value: 1, done: false }
+console.log(g.next()); // { value: 11, done: false }
+console.log(g.next()); // { value: 111, done: false }
+console.log(g.next()); // { value: 2, done: true }
+console.log(g.next()); // { value: undefined, done: true }

@@ -13,6 +13,7 @@ let mergedObj = { ...obj1, ...obj2 };
 
 //? delete property
 //* Return value - true for all cases except when the property is an own non-configurable property, in which case false is returned in non-strict mode.
+//* delete will return false when we try to delete sealed objects by using Object.freeze, Object.seal
 // console.log(delete obj1.foo); // deletes from obj1Copy too
 // console.log(obj1, clonedObj, obj1Copy);
 
