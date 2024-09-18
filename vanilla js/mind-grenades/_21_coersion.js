@@ -34,3 +34,7 @@ console.log([] == false); // true
 // undefined == undefined is true.
 
 // But null is not equal to any other type, including numbers, strings, objects, etc.
+
+console.log(Number(null)); // 0
+console.log(Number(undefined)); // NaN
+
