@@ -15,7 +15,7 @@ console.log(sum); // 0
 // sum = [].reduce((acc, curr) => acc + curr);
 //* TypeError: Reduce of empty array with no initial value
 
-//* #04 - reduce with single element array
+//* #04 - reduce with single element array and no initial value
 sum = [5].reduce((acc, curr) => {
   console.log("Called", acc, curr); // function not called even once
   return acc + curr;
@@ -29,3 +29,11 @@ sum = [5, 6].reduce((acc, curr) => {
 });
 
 // Called 5 6
+
+//* #05 - reduce with single element array and initial value
+sum = [5].reduce((acc, curr) => {
+  console.log("Called", acc, curr); // function not called even once
+  return acc + curr;
+}, 10);
+// Called 10 5
+console.log(sum); // 15
