@@ -39,7 +39,7 @@ greetings();
 // Second greetings
 // First greetings
 
-// Explanation - function takes precedence over variable declaration in hoisting
+// Explanation - function takes precedence over variable declaration in hoisting OR variables gets hoisted first then functions
 
 //* Similar Problem Below
 sayHello();
@@ -59,10 +59,11 @@ sayHello();
 // sayHello #2
 // sayHello #2
 
-// Explanation - 2nd sayHello function overrides the fist one while hoisting, as they don't get created again everytimg 2nd function definition runs
+// Explanation - 2nd sayHello function overrides the fist one while hoisting, as they don't get created again every time 2nd function definition runs
 
 
-//* Accessing variable outside function
+//* Accessing outside variable declared below function
+// NOTE: declaration order doesn't matter, function call and variable initialization matters
 function useVar() {
   console.log(B);
 }
