@@ -13,7 +13,7 @@ for (let i = 0; i < 5; i++) {
 }
 // Output - 0 1 2 3 4
 // callback function has reference to every value of 'i' because of let keyword and it's block scope
-// NOTE - let is declared inside for loop, hence every setTimeout callback will have it's own reference to value i
+// NOTE - 'let' is declared inside for loop, hence every setTimeout callback will have it's own reference to value i
 
 //* const with setTimeout
 // for (const i = 0; i < 10; i++) {
@@ -40,7 +40,7 @@ delayLog();
 // Output -
 // 5 5 5 5 5
 
-//* NOTE - setTimeout with 0 milliSecond or empty argument executes in order
+//* NOTE - 'setTimeout' with 0 milliSecond or empty argument executes in order - by default it takes '0'
 setTimeout(() => {
   console.log("0 setTimeout");
 }, 0);
@@ -103,9 +103,9 @@ setTimeout(() => {
   func();
 });
 function func() {
-  console.log(x); // undefined
+  console.log(x);
 }
-func();
+func(); // undefined - at this point value of x is not initialized, it's done below
 var x = 30;
 
 // Output:

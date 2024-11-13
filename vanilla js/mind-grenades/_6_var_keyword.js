@@ -4,14 +4,14 @@ for (var i = 0; i < 5; ) {
   i++;
 }
 
-console.log(i); // 5
+console.log(i); // 5 -> var makes declaration available to it's outer execution stack
 
 (function () {
   var j = 10;
   console.log(j); // 10
 })();
 
-// console.log(j); // Reference error -> functions has it's own execution stack
+// console.log(j); // Reference error -> functions has it's own execution stack - var has function scope
 
 // for loop -> not using any keyword to declare -> by default var is used
 for (k = 0; k < 2; k++) {

@@ -8,9 +8,9 @@ console.log(b); // Output - "Hello World!"
 // because of variable declaration b becomes global variable
 
 // console.log(c); // Output - Reference Error
-// because it was declared inside function
+// because it was declared inside function - var has function scope
 
-// #02 - variable hoisting declared with const keyword
+// #02 - variable hoisting declared with const keyword (Temporal Dead Zone)
 const PI = 3.14;
 function test() {
   console.log(PI);
@@ -29,4 +29,5 @@ const func = ()=> {
 }
 
 // func(); 
-// SyntaxError: Identifier 'a' has already been declared
+// SyntaxError: Identifier 'a' has already been declared, no compile time error because 'var' allows re-declaration of variable
+// if used 'let' before var then it will give compile time error
