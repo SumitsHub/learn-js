@@ -52,3 +52,23 @@ console.log(ob2);
 
 // { age: 123 }
 // { age: 123 }
+
+
+//* 04 - changing object argument in different ways inside function
+
+function changeArg(obj) {
+  // #01 - normal/direct assignment
+  // obj = obj;
+
+  // #02 - using spread operator
+  obj = { ...obj };
+
+  obj.newProp = "New Prop";
+}
+
+let person = { name: "Micheal", birth: { year: 1990, month: 1, day: 20 } };
+console.log(person); // { name: 'Micheal', birth: { year: 1990, month: 1, day: 20 } }
+changeArg(person);
+console.log(person);
+// #01 - { name: 'Micheal', birth: { year: 1990, month: 1, day: 20 }, newProp: 'New Prop' }
+// #02 - { name: 'Micheal', birth: { year: 1990, month: 1, day: 20 } } -> NOT CHANGED
