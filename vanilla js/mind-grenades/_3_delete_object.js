@@ -16,3 +16,16 @@ employee.company = "Microsoft";
 
 console.log(david.company); // Output -> Microsoft
 // proof for the delete property above
+
+
+//* delete with function argument
+let output = (function(x){
+  delete x;
+  return x;
+})(3);
+
+console.log(output); // 3
+
+// Explanation:
+// 'delete' keyword is used to delete properties of object, not variables
+// in strict mode, it throws error
