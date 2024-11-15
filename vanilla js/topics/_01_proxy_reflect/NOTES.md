@@ -1,7 +1,7 @@
 ### Proxy Object in JS
 The Proxy object enables you to create a proxy for another object, which can intercept and redefine fundamental operations for that object.
 
-## 2 required parameters to create proxy
+## two required parameters to create proxy
 ```js
 // target - the original object which you want to proxy
 const target = {
@@ -32,7 +32,7 @@ Example - Array objects(it has magic property 'length' which changes as modifica
 ## Internal Methods of Objects
 1. Object defines some internal methods specifying how it can be interacted with
 2. All internal methods are called by the language itself, and are not directly accessible in JavaScript code
-3. Internal methods of Objects and corrensponding proxy traps - 
+3. Internal methods of Objects and corresponding proxy traps - 
 ```js
 [[GetPrototypeOf]] - getPrototypeOf()
 [[SetPrototypeOf]] - setPrototypeOf()
