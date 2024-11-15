@@ -21,4 +21,4 @@ function func(...args) {
   console.log(args);
 }
 
-func(); // []
+func(); // [] - an empty array

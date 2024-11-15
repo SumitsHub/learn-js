@@ -6,10 +6,12 @@ class Person {
     this.age = age;
   }
 
+  // getter
   get birthYear() {
     return new Date().getFullYear() - this.age;
   }
 
+  // setter
   set birthYear(year) {
     if (year < 0) {
       throw new Error("Year cant be negative!");
