@@ -69,3 +69,19 @@ console.log(result3.valueOf()); // Output: 21
 - The valueOf method of addInner returns the sum when you try to convert it to a primitive value.
 
 */
+
+
+//* Problem #03 - concat numbers using currying 
+
+function concat(...a) {
+  return function(...b) {
+   return function(...c) {
+     return `${a.join('')}${b.join('')}${c.join('')}`
+   }
+  }
+}
+
+console.log(concat(1)(2)(3)); // 123
+
+console.log(concat(1)(2,3)(4,5,6)); // 123456
+console.log(concat(1,2,3)(4,5)(6)); // 123456
