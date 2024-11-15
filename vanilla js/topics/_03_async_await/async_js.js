@@ -24,7 +24,7 @@ function getPost() {
 // createPost({title: 'Post three', body: 'This is post three'})
 // getPost()
 
-// Promise
+//* Promise
 
 function createPost(post) {
   return new Promise((resolve, reject) => {
@@ -57,7 +57,7 @@ console.log(promise1); // Promise { 'Hello World' }
 
 const promise2 = 10;
 const promise3 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 2000, "Goodbye Bro");
+  setTimeout(resolve, 2000, "Goodbye Bro"); // parameter value to setTimeout()
 });
 
 Promise.all([promise1, promise2, promise3]).then(values => console.log(values)); // [ 'Hello World', 10, 'Goodbye Bro' ]
