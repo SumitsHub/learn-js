@@ -1,4 +1,4 @@
-//** using iteration / not using recursion */
+//** using iteration, not using recursion */
 
 function flatArray(arr) {
   let stack = [...arr];
@@ -9,19 +9,19 @@ function flatArray(arr) {
     if (Array.isArray(item)) stack.push(...item);
     else res.push(item);
   }
-  return res.reverse();
+  return res.reverse(); //* need to reverse in the end
 }
 
 console.log(flatArray([1, [2, [3, 4, [5]]]])); // [ 1, 2, 3, 4, 5 ]
 console.log(flatArray([1, [2, [3, 4, [5], 6, 7], 8], 9])); // [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 
-//** Using recursion */
+//** Using recursion*/
 function flatArray2(inputArr) {
   let result = [];
 
   for (let arr of inputArr) {
     if (Array.isArray(arr)) {
-      result.push(...flatArray2(arr));
+      result.push(...flatArray2(arr)); //* need to use spread operator since function will return an array in the end
     } else {
       result.push(arr);
     }
@@ -47,7 +47,7 @@ function flatArray3(arr, res = []) {
 console.log("flatArray3", flatArray3([1, [2, [3, 4, [5]]]])); // flatArray3 [ 1, 2, 3, 4, 5 ]
 console.log("flatArray3", flatArray3([1, [2, [3, 4, [5], 6, 7], 8], 9])); // flatArray3 [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 
-//** Flat array with level of nesting */
+//** Flat array with level of nesting - using Array.reduce() and recursion */
 
 function flat(arr, level = 1) {
   if (level < 1) return arr;
