@@ -78,7 +78,7 @@ function returnValueFromThenCatch() {
     });
 }
 
-returnValueFromThenCatch();
+// returnValueFromThenCatch();
 
 // Output:
 // p ->First then:  Something
@@ -88,3 +88,36 @@ returnValueFromThenCatch();
 // p ->Third then Value from 2nd then
 // q ->Second then undefined
 // q ->Third then Value from 2nd then
+
+
+function finallyExample() {
+  const promise = new Promise(res => res(2));
+  promise
+    .then(val => {
+      console.log(val);
+      return val * 2;
+    })
+    .then(val => {
+      console.log(val);
+      return val * 2;
+    })
+    .finally(val => {
+      console.log("finally", val);
+      return val * 2;
+    })
+    .then(val => {
+      console.log(val);
+      return val * 2;
+    })
+    .finally(val => {
+      console.log("finally", val);
+      return val * 2;
+    });
+}
+finallyExample();
+// Output:
+// 2
+// 4
+// finally undefined
+// 8
+// finally undefined
