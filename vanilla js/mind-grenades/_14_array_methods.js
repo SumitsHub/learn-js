@@ -1,4 +1,5 @@
 //** reduce method */
+// Parameters of callback function: (previousValue: number, currentValue: number, currentIndex: number, array: number[]) 
 
 // #01 - normal reduce method
 let sum = [1, 2, 3, 4].reduce((acc, curr) => acc + curr, 0);

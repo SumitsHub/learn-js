@@ -22,12 +22,36 @@ function test() {
 
 //*  #03 - declaring variable with var and let in same scope
 
-const func = ()=> {
-  var a = 10;
-  let a = 50;
-  console.log(a); 
-}
+// const func = ()=> {
+//   var a = 10;
+//   let a = 50;
+//   console.log(a); 
+// }
+//* NOTE: above function definition will give error even if you don't call
 
 // func(); 
 // SyntaxError: Identifier 'a' has already been declared, no compile time error because 'var' allows re-declaration of variable
 // if used 'let' before var then it will give compile time error
+
+console.log("*".repeat(10) + "named function expression" + "*".repeat(10));
+//* named function expression
+
+const s = function p() {
+  console.log(typeof p); // function
+  p = "Something";
+  console.log(typeof p); // function
+  console.log(typeof s); // function
+};
+
+// before function call
+console.log(typeof p); // undefined
+console.log(typeof s); // function
+
+s(); // function call
+// function
+// function
+// function
+
+// after function call
+console.log(typeof p); // undefined
+console.log(typeof s); // function
