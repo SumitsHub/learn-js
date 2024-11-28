@@ -26,7 +26,27 @@ function getSubArray(arr, target) {
 console.log(getSubArray([1, 4, 10, 3, 1, 5], 6)); // Output: [1, 5]
 console.log(getSubArray([1, 1, 6, 3], 9)); // Output: [6, 3]
 
+// Explanation
+//* Sliding Window Approach:
+// Use two pointers (start and end) to maintain a window of elements.
+// Keep track of the currentSum of the elements within the window.
+
+//* Adjust Window:
+// If the currentSum exceeds the target, shrink the window from the left by incrementing the start pointer and subtracting the value at start from the currentSum.
+
+//* Check Target:
+// If the currentSum equals the target, return the subarray defined by [start, end].
+
+//* Edge Cases:
+// If the input array is empty, the function returns [].
+// If no subarray matches the target sum, the function also returns [].
+
+
 //* #02. To handle negative(-ve) numbers ->
+// the sliding window approach works with positive numbers but not with negative numbers, because when negative numbers are included, the sum can decrease even when extending the window. 
+// This breaks the logic of reducing the sum only when it exceeds the target.
+
+// To handle cases with negative numbers, you need a different approach, such as prefix sums combined with a hash map.
 function getSubArray(arr, target) {
   const prefixSumMap = new Map(); // Maps prefix sums to their indices
   let currentSum = 0;
@@ -84,3 +104,16 @@ function findUniquePairs(arr, target) {
 // Example usage
 const result = findUniquePairs([1, 4, 6, 2, 3, -1, 5, 7, 4, 2], 6);
 console.log(result); // Output: [[4, 2], [1, 5], [-1, 7]]
+
+
+// Explanation of Changes
+// Prefix Sum Map:
+// Maintain a cumulative sum (currentSum) while iterating through the array.
+// Store each prefix sum and its index in a map (prefixSumMap).
+
+// Logic for Target Check:
+// If currentSum === target, it means the subarray from the beginning to the current index matches the target.
+// Otherwise, if currentSum - target exists in the map, it means there’s a subarray starting after the index of the stored prefix sum that matches the target.
+
+// Generalization for Negative Numbers:
+// The prefix sum technique handles both increasing and decreasing values in the sum, so it works regardless of the sign of the numbers.
