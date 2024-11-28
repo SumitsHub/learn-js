@@ -96,13 +96,13 @@ let obj9 = Object.fromEntries(Object.entries({ name: "Tom", age: 23 }));
 console.log(obj9); // {name: 'Tom', age: 23}
 
 //? Object.is() - The Object.is() method determines whether two values are the same value.
-// Case 1: Evaluation result is the same as using ===
+// Case 1: Evaluation result is the same as using "==="
 Object.is(25, 25); // true
 Object.is("foo", "foo"); // true
 Object.is("foo", "bar"); // false
 Object.is(null, null); // true
 Object.is(undefined, undefined); // true
-Object.is(window, window); // true
+// Object.is(window, window); // true -> in browser
 Object.is([], []); // false
 var foo = { a: 1 };
 var bar = { a: 1 };
@@ -122,9 +122,12 @@ Object.is(NaN, Number.NaN); // true
 //? Object.keys() - The Object.keys() method returns an array of a given object's own enumerable property names, iterated in the same order that a normal loop would.
 //* NOTE: prototype properties are not enumerable
 const object2 = {
-  a: "somestring",
+  a: "value",
   b: 42,
   c: false,
+  getA() {
+    return this.a;
+  },
 };
 
 console.log(Object.keys(object2));
@@ -167,3 +170,8 @@ Object.hasOwn(example, "hasOwnProperty"); // false
 "prop" in example; // true
 "toString" in example; // true
 "hasOwnProperty" in example; // true
+
+//* for Node env
+console.log(globalThis); // global object
+console.log(this); // {}
+console.log(globalThis === this); // false
