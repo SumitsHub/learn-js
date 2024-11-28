@@ -67,3 +67,16 @@ console.log(flat(nestedArray)); // [ 1, 2, 3, 4, [ 5, 6 ] ]
 console.log(flat(nestedArray, 1)); // [ 1, 2, 3, 4, [ 5, 6 ] ]
 console.log(flat(nestedArray, 2)); // [ 1, 2, 3, 4, 5, 6 ]
 console.log(flat(nestedArray, Infinity)); // [ 1, 2, 3, 4, 5, 6 ]
+
+
+//* with Array.reduce and no level
+function flattenArray(arr) {
+  return arr.reduce((acc, val) => {
+      return Array.isArray(val) ? acc.concat(flattenArray(val)) : acc.concat(val);
+  }, []);
+}
+
+// NOTE: used .concat method -> no need to use spread operator
+
+const nestedArr = [1, [2, [3, 4], 5]];
+console.log(flattenArray(nestedArr)); // Output: [1, 2, 3, 4, 5]
