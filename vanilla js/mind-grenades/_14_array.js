@@ -40,7 +40,7 @@ console.log(b2); // [1]
 console.log(b2[1]); // undefined
 
 
-// #04 - empty spaces
+//* #04 - empty spaces
 let arr2 = [];
 
 arr2[10] = 10;
@@ -62,3 +62,9 @@ let mappedArr = arr2.map((val, ind, arr) => {
 // map 10 10 (11) [empty × 10, 10] - executed only once - similar to forEach
 
 console.log(mappedArr); // [empty × 10, 10]
+
+//* #05 Array.sort()
+console.log([2, 8, 15, 16, 23, 42].sort()); // [ 15, 16, 2, 23, 42, 8 ]
+// Using String with .call method -> gives Error
+// console.log(new Array().sort.call("String")); 
+// TypeError: Cannot assign to read only property '0' of object '[object String]'
