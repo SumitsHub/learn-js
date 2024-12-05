@@ -71,3 +71,42 @@ console.log("2");
 // Output: 1 3 2 4
 
 // NOTE: However, since this is an async function, the part after await runs in the next tick of the event loop, making it asynchronous.
+
+
+// #04
+console.log("Start");
+
+async function asyncFunc() {
+  console.log("Inside Async");
+  await Promise.resolve();
+  console.log("After Await");
+}
+
+asyncFunc();
+
+Promise.resolve().then(() => {
+  console.log("Promise 1");
+  setTimeout(() => {
+    console.log("Timeout in Promise");
+  }, 0);
+});
+
+setImmediate(() => {
+  console.log("Immediate");
+});
+
+process.nextTick(() => {
+  console.log("Next Tick");
+});
+
+console.log("End");
+
+// Output
+// Start
+// Inside Async
+// End
+// Next Tick
+// After Await
+// Promise 1
+// Timeout in Promise
+// Immediate
