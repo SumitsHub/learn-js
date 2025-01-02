@@ -47,6 +47,7 @@ parseInt("-42"); // -42
 
 parseInt("abc"); // NaN
 parseInt("10.5.6"); // 10 (valid portion is parsed)
+parseFloat("10.5.6"); // 10.5 (parses the entire float)
 
 //* 7. Only Parses Strings:
 // If the input is not a string, it is coerced into a string before parsing.

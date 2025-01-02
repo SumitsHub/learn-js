@@ -32,3 +32,5 @@ console.log(Number.isNaN(NaN)); // true
 console.log(Number.isNaN(undefined * 2)); // true
 
 //* Difference between global isNaN and Number.isNaN
+// The global isNaN() function converts the tested value to a Number, then tests it.
+// Number.isNaN() does not convert the values to a Number, and will not return true for any value that is not of the type Number.
