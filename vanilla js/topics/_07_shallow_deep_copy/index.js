@@ -10,7 +10,7 @@ console.log(arr);
 
 // IMP -> shallow and deep copies comes into play when there is nested properties in an object, because by default primitive values get's copied and not referenced
 
-// Shallow Copy of Object
+//* Shallow Copy of Object
 // A shallow copy of an object is a copy whose properties share the same references (point to the same underlying values) as those of the source object from which the copy was made.
 
 // As a result, when you change either the source or the copy, you may also cause the other object to change too.
@@ -60,7 +60,7 @@ console.log(JSON.stringify(ingredientsList));
 // One way to make a deep copy of a JavaScript object, if it can be serialized, is to use JSON.stringify() to convert the object to a JSON string, and then JSON.parse() to convert the string back into a (completely new) JavaScript object:
 
 // * Serialization - The process whereby an object or data structure is translated into a format suitable for transfer over a network, or storage (e.g. in an array buffer or file format).
-// In JavaScript, for example, you can serialize an object to a JSON string by calling the function JSON.stringify().
+// In JavaScript, for example, you can serialize an object to a "JSON string" by calling the function JSON.stringify().
 
 const ingredientsList2 = ["noodles", { list: ["eggs", "flour", "water"] }];
 const ingredientsList2DeepCopy = JSON.parse(JSON.stringify(ingredientsList2));
@@ -73,4 +73,10 @@ ingredientsList2DeepCopy[1].list = ["rice flour", "water"];
 console.log(ingredientsList2[1].list);
 // Array(3) [ "eggs", "flour", "water" ]
 
-// to check copyWithing array method
+//* copyWithin() method - copies array elements to another position in the array, overwriting the existing values
+let arr3 = [1, 2, 3, 4, 5];
+let res = arr3.copyWithin(0, 3, 4); // copy the values from index 3 to 4 to index 0
+console.log(res); // [4, 2, 3, 4, 5]
+console.log(arr3); // [4, 2, 3, 4, 5]
+
+console.log([1, 2, 3, 4, 5].copyWithin(0, 3, 5)); // [4, 5, 3, 4, 5]
