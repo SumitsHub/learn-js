@@ -94,9 +94,12 @@ const bookProtos = {
 
 const book1 = Object.create(bookProtos, {
   title: { value: "Book One" },
-  author: { value: "John Doe" },
+  author: { value: "John Doe", writable: false },
   year: { value: "2020" },
 });
 
-console.log(book1);
-console.log(book1.getSummary());
+console.log(book1); // {title: "Book One", author: "John Doe", year: "2020"}
+console.log(book1.getSummary()); // Book One was written by John Doe in 2020
+
+book1.author = "Steve Smith"; // it will not change the author name because we have set 'writable' to 'false'
+console.log(book1.getSummary()); // Book One was written by John Doe in 2020
