@@ -24,6 +24,9 @@ let arr = [promise1, promise2, promise3];
 // });
 
 // Output:
+// Promise { <pending> }
+// Promise { <pending> }
+// Promise { <pending> }
 // promise1
 // promise2
 // promise3

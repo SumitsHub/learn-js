@@ -15,7 +15,7 @@ const handler = {
 
 const proxy1 = new Proxy(target, handler);
 
-console.log(proxy1.message1);
+console.log(proxy1.message1); // undefined - get trap is empty(no operation defined)
 // target - the original object which you want to proxy
 // handler - an object that defines which operations will be intercepted and how to redefine intercepted operations
 
@@ -55,8 +55,8 @@ console.log(Reflect.has(duck, "color")); // true
 console.log(Reflect.has(duck, "haircut")); // false
 
 // Adding a new property to the object
-Reflect.set(duck, "eyes", "black");
-// returns "true" if successful
+let success = Reflect.set(duck, "eyes", "black"); // returns "true" if successful
+console.log(success); // true
 // "duck" now contains the property "eyes: 'black'"
 
 console.log(Reflect.ownKeys(duck));

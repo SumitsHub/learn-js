@@ -47,7 +47,7 @@ function createPost(post) {
 //     console.log(err);
 //   });
 
-const promise1 = Promise.resolve("Hello World");
+const promise1 = Promise.resolve("Hello World"); // Promise.resolve() returns a Promise object that is resolved with a given value.
 console.log(promise1); // Promise { 'Hello World' }
 
 (async () => {
